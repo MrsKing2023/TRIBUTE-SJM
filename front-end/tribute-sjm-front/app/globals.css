@@ -3,5 +3,39 @@
 @tailwind utilities;
 
 body {
-  background-color: bisque;
+  background-color: lightgray;
+  font-family: Garamond, Courier New, Georgia;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #333;
+  margin: 0;
+
+  h1 {
+    font-size: 4vw;
+  }
+
+  img {
+    max-width: 50%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+  }
+
+#img-div {
+  background:fixed;
+  padding: 10px;
+  margin: 0;
+}
+
+#img-caption{
+  margin: 15px 0 5px 0;
+  }
+
+  blockquote {
+    font-style: italic;
+    max-width: 545px;
+    margin: 0 auto 50px auto;
+    text-align: left;
+  }
 }
