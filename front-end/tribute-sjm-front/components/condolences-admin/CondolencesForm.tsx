@@ -1,6 +1,6 @@
 'use client'
 
-export default function CondolencesForm() {
+export default function CondolencesForm(props:any) {
 
     const webUrl: string = "http://localhost:8080"
 
@@ -24,7 +24,17 @@ export default function CondolencesForm() {
             },
             body: JSON.stringify(condolenceEntry),
         }).then((response) => response.json()).then(condolenceEntry => {
-            console.log(condolenceEntry);
+            props.setCondolenceEntries(condolenceEntry);
+
+            event.target.entry.value = ""
+            event.target.firstName.value = ""
+            event.target.lastName.value = ""
+            event.target.relationship.value = ""
+            event.target.emailAddress.value = ""
+            event.target.city.value = ""
+            event.target.state.value = ""
+
+
         })            
     }
 

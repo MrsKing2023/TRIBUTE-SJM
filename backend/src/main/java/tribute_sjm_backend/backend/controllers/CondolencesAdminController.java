@@ -4,13 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import tribute_sjm_backend.backend.models.CondolenceEntity;
 import tribute_sjm_backend.backend.models.dto.CondolenceDTO;
 import tribute_sjm_backend.backend.repository.CondolenceRepository;
+
+import java.util.Optional;
 
 @Controller
 @CrossOrigin
@@ -28,6 +27,23 @@ public class CondolencesAdminController {
 
         return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
     }
+
+    @GetMapping("/getCondolenceEntries")
+    public ResponseEntity<?> getCondolenceEntryObjects() {
+        return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/removeCondolence/{id}")
+    public ResponseEntity<?> removeCondolenceEntry(@PathVariable Long id) {
+        Optional<CondolenceEntity> removeCondolence = condolenceRepository.findById(id);
+
+        if(removeCondolence.isPresent()){
+            condolenceRepository.delete(removeCondolence.get());
+        }
+
+        return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
+    }
+
 
 
 }
