@@ -10,26 +10,39 @@ public class CondolenceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    public String entry;
     private String firstName;
     private String lastName;
     private String relationship;
     private String emailAddress;
-    private String entry;
     private String city;
     private String state;
 
-    public CondolenceEntity(String firstName, String lastName, String relationship, String emailAddress, String entry, String city, String state) {
+    public CondolenceEntity(String entry, String firstName, String lastName, String relationship, String emailAddress, String city, String state) {
+        this.entry = entry;
         this.firstName = firstName;
         this.lastName = lastName;
         this.relationship = relationship;
         this.emailAddress = emailAddress;
-        this.entry = entry;
         this.city = city;
         this.state = state;
     }
 
+    public CondolenceEntity () {
+
+    }
+
+
     public Long getId() {
         return id;
+    }
+
+    public String getEntry() {
+        return entry;
+    }
+
+    public void setEntry(String entry) {
+        this.entry = entry;
     }
 
     public String getFirstName() {
@@ -62,14 +75,6 @@ public class CondolenceEntity {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
-    }
-
-    public String getEntry(String entry) {
-        return entry;
-    }
-
-    public void setEntry(String entry) {
-        this.entry = entry;
     }
 
     public String getCity() {

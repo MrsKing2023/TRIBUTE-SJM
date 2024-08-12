@@ -16,6 +16,7 @@ export default function CondolencesForm() {
             city: String(event.target.city.value),
             state: String(event.target.state.value),
         }
+        
         await fetch(webUrl + "/admin/addCondolence", {
             method: 'POST', 
             headers: {

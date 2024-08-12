@@ -23,8 +23,7 @@ public class CondolencesAdminController {
     @PostMapping("/addCondolence")
     public ResponseEntity<?> addCondolence(@RequestBody CondolenceDTO condolenceDTO) {
 
-        CondolenceEntity newCondolence = new CondolenceEntity(condolenceDTO.getEntry(), condolenceDTO.getFirstName(), condolenceDTO.getLastName(), condolenceDTO.getEmailAddress(), condolenceDTO.getRelationship(), condolenceDTO.getCity(), condolenceDTO.getState());
-
+        CondolenceEntity newCondolence = new CondolenceEntity(condolenceDTO.getEntry(), condolenceDTO.getFirstName(), condolenceDTO.getLastName(), condolenceDTO.getRelationship(), condolenceDTO.getEmailAddress(), condolenceDTO.getCity(), condolenceDTO.getState());
         condolenceRepository.save(newCondolence);
 
         return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
