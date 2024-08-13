@@ -5,7 +5,7 @@
 body {
   background-color: lightgray;
   font-family: Garamond, Courier New, Georgia;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   text-align: center;
   color: #333;
@@ -38,4 +38,6 @@ body {
     margin: 0 auto 50px auto;
     text-align: left;
   }
+
+
 }
