@@ -40,7 +40,24 @@ public class CondolencesAdminController {
         if(removeCondolence.isPresent()){
             condolenceRepository.delete(removeCondolence.get());
         }
+        return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
+    }
 
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateEntry(@PathVariable Long id, @RequestBody CondolenceDTO condolenceDTO) {
+
+        Optional<CondolenceEntity> updateCondolenceEntry = condolenceRepository.findById(id);
+        if (updateCondolenceEntry.isPresent()) {
+            updateCondolenceEntry.get().setEntry(condolenceDTO.getEntry());
+            updateCondolenceEntry.get().setFirstName(condolenceDTO.getFirstName());
+            updateCondolenceEntry.get().setLastName(condolenceDTO.getLastName());
+            updateCondolenceEntry.get().setRelationship(condolenceDTO.getRelationship());
+            updateCondolenceEntry.get().setEmailAddress(condolenceDTO.getEmailAddress());
+            updateCondolenceEntry.get().setCity(condolenceDTO.getCity());
+            updateCondolenceEntry.get().setState(condolenceDTO.getState());
+            condolenceRepository.save(updateCondolenceEntry.get());
+
+        }
         return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
     }
 
