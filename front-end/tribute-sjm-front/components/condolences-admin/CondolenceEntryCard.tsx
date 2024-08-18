@@ -1,14 +1,45 @@
 import { useState } from "react"
 
+interface CondolenceEntry {
+    entry: String,
+    firstName: String,
+    lastName: String,
+    relationship: String,
+    emailAddress: String,
+    city: String,
+    state: String,
+}
+
 export default function CondolenceEntryCard(props: any) {
+
+    const webUrl: string = "http://localhost:8080"
 
     const [entry, setEntry] =useState<boolean>(false);
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
 
-        const 
+        const condolenceEntry = {
+            entry: String(event.target.entry.value),
+            firstName: String(event.target.firstName.value),
+            lastName: String(event.target.lastName.value),
+            relationship: String(event.target.relationship.value),
+            emailAddress: String(event.target.emailAddress.value),
+            city: String(event.target.city.value),
+            state: String(event.target.state.value),
+        }
+        
+        fetch(webUrl + "/admin/update/" + props.entry.id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            }, 
+            body: JSON.stringify(condolenceEntry),
+            }).then((response) => response.json()).then((condolenceEntry: CondolenceEntry[]) => {
+                props.setCondolenceEntries(condolenceEntry);
+                setEntry(prev => !prev)
 
+            }) 
     
     }
 

@@ -1,5 +1,15 @@
 'use client'
 
+interface CondolenceEntry {
+    entry: String,
+    firstName: String,
+    lastName: String,
+    relationship: String,
+    emailAddress: String,
+    city: String,
+    state: String,
+}
+
 export default function CondolencesForm(props:any) {
 
     const webUrl: string = "http://localhost:8080"
@@ -23,7 +33,7 @@ export default function CondolencesForm(props:any) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(condolenceEntry),
-        }).then((response) => response.json()).then(condolenceEntry => {
+        }).then((response) => response.json()).then((condolenceEntry: CondolenceEntry[]) => {
             props.setCondolenceEntries(condolenceEntry);
 
             event.target.entry.value = ""

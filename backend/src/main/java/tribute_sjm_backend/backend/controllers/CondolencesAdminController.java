@@ -47,6 +47,7 @@ public class CondolencesAdminController {
     public ResponseEntity<?> updateEntry(@PathVariable Long id, @RequestBody CondolenceDTO condolenceDTO) {
 
         Optional<CondolenceEntity> updateCondolenceEntry = condolenceRepository.findById(id);
+
         if (updateCondolenceEntry.isPresent()) {
             updateCondolenceEntry.get().setEntry(condolenceDTO.getEntry());
             updateCondolenceEntry.get().setFirstName(condolenceDTO.getFirstName());
@@ -56,7 +57,6 @@ public class CondolencesAdminController {
             updateCondolenceEntry.get().setCity(condolenceDTO.getCity());
             updateCondolenceEntry.get().setState(condolenceDTO.getState());
             condolenceRepository.save(updateCondolenceEntry.get());
-
         }
         return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
     }
