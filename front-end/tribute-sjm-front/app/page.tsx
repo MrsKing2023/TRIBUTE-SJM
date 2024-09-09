@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Video from "next-video";
+import Obituary from "/videos/Obituary.mp4";
+import Mux from '@mux/mux-node';
 
 export default function Home() {
   return (
     <div>
-      <p>home page/landing page</p>
        <div>
        <h1>Susan Jones-Miree</h1>
         <figure id="img-div">
@@ -20,9 +22,20 @@ export default function Home() {
         </div>
 
         <div>
-          <p>add video here</p>
+          <p>Video</p>
+           <Video src={Obituary} style={{maxWidth: '42rem'}} accentColor="blue"
+           />
+          
         </div>
 
+        <div>
+        <h2><i>POEM written by Taffy Hailey</i></h2>
+          <p><i>My first Christian congregation was in West Farms on Boston Road. In addition to my bible instructor, I didn't know a single soul. As I observed the friends, a lady very slender and tall, was the most fashionably dressed in the Kingdom Hall. She wore scarves and gloves like actresses from way back in the day. She sat very elegantly, crossing and wrapping her legs. Her name was Susan, she had four daughters: Niema, Ruby, Bobbi and Suburwa. After the assembly was announced, Susan approached me by surprise, accompanied by Philip Jarvis, asking are you getting baptized? I was elated! She befriended me, so I happily obliged. We instantly became buddies when I got baptized in 89.<br></br>Susan opened the door to all the friends who were able, with homemade chicken soup on the stove and fresh bagels on the table. We listened to jazz and oldies during joy rides with the Anthony's, diner hopping, eating and drinking coffee with ice cream, cheeseburgers and fried chicken is what most of us ate. Susan chose portobello mushrooms and ate it like steak. She was very health conscious and extremely well rounded, looking half her age, on-lookers were astounded.<br></br>During my time of weakness, Susan called me everyday, sharing daily texts with me; encouraged me while she prayed. While Satan bullied me, Jehovah used Susan as a tool, to get me back on spiritual track to avoid rebelling like a fool. We attended memorials together. I helped her move down south. Bobbi rolled out the welcome mat making me comfortable in her house. Susan was the exact spiritual light that I so desperately needed. I was very impressed by her example, soon after I heeded. She became my best friend. She stuck by me all the way. We encouraged each other by texting everyday.<br></br>In time, she shared her diagnosis which made me sad and blue. She was extremely strong in explaining it, but I didn't want it to be true. When Susan went into hospice, I just had to see her one more time. I made every effort to get to my sister, before she closed her eyes. I held her hand as it was cold to the touch. Tears fell as I said I love you and I will miss you very much. To Bobbi and Suburwa, continue to keep the faith. Your mother will be looking for you when she is awakened. To the rest of the family, I am so sorry for your grief. Rest assured Susan Jones-Miree is in Jehovah's memory.</i><br></br></p>
+        </div>
+
+        <div>
+          <p>add Guest Book here</p>
+        </div>
        
 </div>
 

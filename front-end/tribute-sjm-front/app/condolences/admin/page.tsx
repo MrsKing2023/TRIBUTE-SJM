@@ -36,19 +36,12 @@ export default function CondolencesAdmin() {
 
     return (
         <div>
-        <p>This is the admin page</p>
+        <p>This is the Admin page. Admin has full CRUD functionality</p>
         
-
-        <div>
-            <p>Display the active guestbook</p>
-        </div>
-
         <div > 
         <CondolencesForm 
         setCondolenceEntries={setCondolenceEntries}
         />
-        <p>Add guestbook entry</p>
-        <p>Display entries being added to the guestbook</p>
         </div>
 
         <div>
@@ -57,8 +50,6 @@ export default function CondolencesAdmin() {
             setCondolenceEntries={setCondolenceEntries}
             />
         </div>
-
-
         </div>
     )
 }

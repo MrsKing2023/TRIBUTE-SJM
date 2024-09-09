@@ -43,17 +43,14 @@ export default function CondolencesForm(props:any) {
             event.target.emailAddress.value = ""
             event.target.city.value = ""
             event.target.state.value = ""
-
-
         })            
     }
 
     return (
         <div className="flex justify-center">
             <form onSubmit={handleSubmit}>
-                <h1>Guest Book</h1>
                 <div>
-                    <h1>Entry:</h1>
+                    <h1>Create Entry:</h1>
                     <textarea id="entry" name="entry" rows="5" cols="50" placeholder="What would you like to say about Susan?"></textarea>
                 </div>
 

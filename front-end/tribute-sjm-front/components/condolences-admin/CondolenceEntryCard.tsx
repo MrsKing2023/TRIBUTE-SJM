@@ -38,7 +38,6 @@ export default function CondolenceEntryCard(props: any) {
             }).then((response) => response.json()).then((condolenceEntry: CondolenceEntry[]) => {
                 props.setCondolenceEntries(condolenceEntry);
                 setEntry(prev => !prev)
-
             }) 
     
     }
@@ -118,7 +117,6 @@ export default function CondolenceEntryCard(props: any) {
             <button onClick={() => props.removeEntry(props.entry.id)}className="bg-red-500/80 mt-2 p-2 rounded-md">Delete</button>
             <button onClick={() => setEntry(prev => !prev)} className="bg-green-500/80 mt-2 p-2 rounded-md">Update Entry</button>
             </div>
-
             }
 
         </div>
