@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Video from "next-video";
 import Obituary from "/videos/Obituary.mp4";
-import Mux from '@mux/mux-node';
+import GuestBook from "./condolences/guest-book/page";
 
 export default function Home() {
   return (
@@ -34,7 +34,15 @@ export default function Home() {
         </div>
 
         <div>
-          <p>add Guest Book here</p>
+          <p>Add photo of Susan here</p>
+        <img src=""
+        alt="" width="500" height="600"
+        />
+       </div>
+
+
+        <div>
+          <GuestBook />
         </div>
        
 </div>
