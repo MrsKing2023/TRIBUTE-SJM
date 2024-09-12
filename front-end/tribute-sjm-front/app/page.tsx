@@ -34,16 +34,20 @@ export default function Home() {
         </div>
 
         <div>
-          <p>Add photo of Susan here</p>
-        <img src=""
+        <img src="https://www.dropbox.com/scl/fi/5674bpyg1zyv3yg5zntff/IMG_20220415_215406256.jpg?rlkey=fshc1ks31v3erl40dnrr8qvjs&st=ktkrl8um&raw=1"
         alt="" width="500" height="600"
         />
        </div>
 
-
         <div>
           <GuestBook />
         </div>
+
+        <div>
+        <img src="https://www.dropbox.com/scl/fi/55re1upzz6snd0olecbkq/150637-edited.jpeg?rlkey=4nrts2aa7p76sm54k0f2dx8cz&st=70r433ks&raw=1"
+        alt="" width="500" height="600"
+        />
+       </div>
        
 </div>
 
