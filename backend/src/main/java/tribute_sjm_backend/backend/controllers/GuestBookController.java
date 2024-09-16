@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import tribute_sjm_backend.backend.models.GuestBookEntity;
 import tribute_sjm_backend.backend.models.dto.GuestBookDTO;
 import tribute_sjm_backend.backend.repository.GuestBookRepository;
@@ -31,6 +28,11 @@ public class GuestBookController {
                                                                 guestBookDTO.getState());
         guestBookRepository.save(newGuestBookEntry);
 
+        return new ResponseEntity<>(guestBookRepository.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/getGuestBookEntries")
+    public ResponseEntity<?> getGuestBookEntryObjects() {
         return new ResponseEntity<>(guestBookRepository.findAll(), HttpStatus.OK);
     }
 }

@@ -1,9 +1,35 @@
 
 'use client'
+import { useState, useEffect } from 'react';
+
+interface GuestBookEntry {
+    entry: string,
+    firstName: string,
+    lastName: string,
+    relationship: string,
+    emailAddress: string,
+    city: string,
+    state: string,
+}
+
 
 export default function GuestBook() {
 
-    const webUrl: string = "http://localhost:8080"
+const webUrl: string = "http://localhost:8080"
+
+const [guestBookEntries, setGuestBookEntries] = useState<GuestBookEntry[]>([])
+
+useEffect(function() {
+  const getGuestBookEntries = async() => {
+    await fetch(webUrl + '/guestBook/getGuestBookEntries')
+    .then(response => response.json())
+    .then(guestBookEntry => {
+        setGuestBookEntries(guestBookEntry);
+
+    }) 
+  }
+  getGuestBookEntries();
+}, [])
 
 const handleSubmit = async(event: any) => {
     event.preventDefault();
@@ -34,8 +60,22 @@ const handleSubmit = async(event: any) => {
 
         <form onSubmit={handleSubmit}>
         <div>
-            <h1>Share your memories</h1>
-            <textarea id="entry" name="entry" rows="5" cols="50" placeholder="What would you like to say about Susan?"></textarea>
+            <h1>Guest Book </h1>
+                <ol>
+                <li>What is something you learned from Susan?</li>
+                <li>What is your first memory of Susan?</li>
+                <li>What is something you did together that you enjoyed?</li>
+                <li>What is something you will always remember about Susan?</li>
+                <li>Share a favorite memory you have of Susan.</li>
+                <li>Tell us about a special moment you shared with Susan.</li>
+                <li>Describe a place or activity that reminds you of Susan</li>
+                <li>Describe a time when Susan made you laugh or smile.</li>
+                <li>Talk about a shared experience you had with Susan.</li>
+                </ol>
+        </div>
+
+        <div>
+            <textarea id="entry" name="entry" rows="5" cols="50" placeholder="Answer a question, share your own memory, or leave condolences"></textarea>
         </div>
 
         <div>

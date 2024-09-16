@@ -1,32 +1,30 @@
+'use client'
+
 import Image from "next/image";
 import Video from "next-video";
 import Obituary from "/videos/Obituary.mp4";
 import GuestBook from "./condolences/guest-book/page";
+import GuestBookEditDisplay from "@/components/guest-book/GuestBookEditDisplay";
 
 export default function Home() {
   return (
     <div>
        <div>
-       <h1>Susan Jones-Miree</h1>
+       <h1>In Loving Memory Of Susan Jones-Miree</h1>
         <figure id="img-div">
         <img
           id="image" src="https://www.dropbox.com/scl/fi/muvhkgdhb6rmy4f1ntv87/yungSuz.jpg?rlkey=5xs7neneyq2bzs889f72s82hy&raw=1"
           alt=""
         />
-        <figcaption id="img-caption">Susan Jones-Miree was born in New York City on August 16, 1954 to the late Grafton and Ruby Jones. The oldest of three, she was raised alongside her two brothers, Stephen (Bosco) and George (Randy) in the Bronx, NY. She and her first cousins Darlene Gathers and the late Marie Belcher supported and loved each other as sisters. She raised 4 beautiful daughters, Niema, Ruby, Bobbi and Suburwa. She was a phenomenal mother and a doting grandmother to Nyrhan (Charli), Nyia (Banga-Banga), Damon (The Invisible Man), Daija (Mama Dae), Devin (Master Devin), Raina (Biscuit), Railan (Deep-Dish) and great-grandmother to Jaxen (Lil Tiger), Luna (Pretty Lu) and Zayed (Z). She was a wonderful aunt to her nieces Giselle and Stephanie Jones, Talia Parker and nephews George and Stephen Jones. Susan loved her beautiful tribe.</figcaption></figure>
+        
+        <figcaption id="img-caption"><h1>Susan Jones-Miree Obituary</h1>Susan Jones-Miree was born in New York City on August 16, 1954 to the late Grafton and Ruby Jones. The oldest of three, she was raised alongside her two brothers, Stephen (Bosco) and George (Randy) in the Bronx, NY. She and her first cousins Darlene Gathers and the late Marie Belcher supported and loved each other as sisters. She raised 4 beautiful daughters, Niema, Ruby, Bobbi and Suburwa. She was a phenomenal mother and a doting grandmother to Nyrhan (Charli), Nyia (Banga-Banga), Damon (The Invisible Man), Daija (Mama Dae), Devin (Master Devin), Raina (Biscuit), Railan (Deep-Dish) and great-grandmother to Jaxen (Lil Tiger), Luna (Pretty Lu) and Zayed (Z). She was a wonderful aunt to her nieces Giselle and Stephanie Jones, Talia Parker and nephews George and Stephen Jones. Susan loved her beautiful tribe.</figcaption></figure>
        </div>
 
        <div>
-        <h2 id="headline">Meet Her Beautiful Tribe:</h2>
-        <p>add family picture here</p>
-        </div>
-
-        <div>
-          <p>Video</p>
-           <Video src={Obituary} style={{maxWidth: '42rem'}} accentColor="blue"
-           />
-          
-        </div>
+        <img src="https://www.dropbox.com/scl/fi/5674bpyg1zyv3yg5zntff/IMG_20220415_215406256.jpg?rlkey=fshc1ks31v3erl40dnrr8qvjs&st=ktkrl8um&raw=1"
+        alt="" width="500" height="600"
+        />
+       </div>
 
         <div>
         <h2><i>POEM written by Taffy Hailey</i></h2>
@@ -34,7 +32,7 @@ export default function Home() {
         </div>
 
         <div>
-        <img src="https://www.dropbox.com/scl/fi/5674bpyg1zyv3yg5zntff/IMG_20220415_215406256.jpg?rlkey=fshc1ks31v3erl40dnrr8qvjs&st=ktkrl8um&raw=1"
+        <img src="https://www.dropbox.com/scl/fi/55re1upzz6snd0olecbkq/150637-edited.jpeg?rlkey=4nrts2aa7p76sm54k0f2dx8cz&st=70r433ks&raw=1"
         alt="" width="500" height="600"
         />
        </div>
@@ -44,10 +42,9 @@ export default function Home() {
         </div>
 
         <div>
-        <img src="https://www.dropbox.com/scl/fi/55re1upzz6snd0olecbkq/150637-edited.jpeg?rlkey=4nrts2aa7p76sm54k0f2dx8cz&st=70r433ks&raw=1"
-        alt="" width="500" height="600"
-        />
-       </div>
+          <GuestBookEditDisplay 
+          guestBookEntries={guestBookEntries} />
+        </div>
        
 </div>
 
