@@ -21,7 +21,7 @@ public class GuestBookEntity {
     private String emailAddress;
     private String city;
     private String state;
-    
+
 
     public GuestBookEntity(String entry, String firstName, String lastName, String relationship, String emailAddress, String city, String state) {
         this.entry = entry;
