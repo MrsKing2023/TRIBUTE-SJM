@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Date;
+
 @Entity
 public class GuestBookEntity {
 
@@ -19,6 +21,7 @@ public class GuestBookEntity {
     private String emailAddress;
     private String city;
     private String state;
+    
 
     public GuestBookEntity(String entry, String firstName, String lastName, String relationship, String emailAddress, String city, String state) {
         this.entry = entry;

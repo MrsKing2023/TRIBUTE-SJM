@@ -29,7 +29,7 @@ export default function CondolenceEntryCard(props: any) {
             state: String(event.target.state.value),
         }
         
-        fetch(webUrl + "/admin/update/" + props.entry.id, {
+        fetch(webUrl + "/admin/update/" + props.entry.entry, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -106,15 +106,14 @@ export default function CondolenceEntryCard(props: any) {
 
             :
             <div>
-            <p>Id: {props.entry.id}</p>
-            <p>Entry: {props.entry.entry}</p>
-            <p>First Name: {props.entry.firstName}</p>
-            <p>Last Name: {props.entry.lastName}</p>
-            <p>Relationship: {props.entry.relationship}</p>
-            <p>Email Address: {props.entry.emailAddress}</p>
-            <p>City: {props.entry.city}</p>
-            <p>State: {props.entry.state} </p>
-            <button onClick={() => props.removeEntry(props.entry.id)}className="bg-red-500/80 mt-2 p-2 rounded-md">Delete</button>
+            <p>Entry: {props.condolenceEntry.entry}</p>
+            <p>First Name: {props.condolenceEntry.firstName}</p>
+            <p>Last Name: {props.condolenceEntry.lastName}</p>
+            <p>Relationship: {props.condolenceEntry.relationship}</p>
+            <p>Email Address: {props.condolenceEntry.emailAddress}</p>
+            <p>City: {props.condolenceEntry.city}</p>
+            <p>State: {props.condolenceEntry.state} </p>
+            <button onClick={() => props.removeEntry(props.condolenceEntry.entry)}className="bg-red-500/80 mt-2 p-2 rounded-md">Delete</button>
             <button onClick={() => setEntry(prev => !prev)} className="bg-green-500/80 mt-2 p-2 rounded-md">Update Entry</button>
             </div>
             }

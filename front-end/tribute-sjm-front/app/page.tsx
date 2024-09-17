@@ -5,6 +5,7 @@ import Video from "next-video";
 import Obituary from "/videos/Obituary.mp4";
 import GuestBook from "./condolences/guest-book/page";
 import GuestBookEditDisplay from "@/components/guest-book/GuestBookEditDisplay";
+import GuestBookForm from "@/components/guest-book/GuestBookForm";
 
 export default function Home() {
   return (
@@ -38,12 +39,11 @@ export default function Home() {
        </div>
 
         <div>
-          <GuestBook />
+          <GuestBookForm />
         </div>
 
         <div>
-          <GuestBookEditDisplay 
-          guestBookEntries={guestBookEntries} />
+          <GuestBookEditDisplay />
         </div>
        
 </div>

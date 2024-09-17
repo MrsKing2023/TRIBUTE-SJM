@@ -22,11 +22,11 @@ export default function CondolencesEditDisplay(props: any) {
         })
     }
 
-const allEntries = props.condolenceEntries.map((entry: CondolenceEntry) => {
+const allEntries = props.condolenceEntries.map((condolenceEntry: CondolenceEntry) => {
     return (
         <CondolenceEntryCard
-        key={entry.id}
-        entry={entry}
+        key={condolenceEntry.entry}
+        condolenceEntry={condolenceEntry}
         removeEntry={removeEntry}
         setCondolenceEntries={props.setCondolenceEntries}
         />
