@@ -7,11 +7,11 @@ import {useState, useEffect } from 'react';
 
 
 interface CondolenceEntry {
+    id: Number,
     entry: String,
     firstName: String,
     lastName: String,
     relationship: String,
-    emailAddress: String,
     city: String,
     state: String,
 }

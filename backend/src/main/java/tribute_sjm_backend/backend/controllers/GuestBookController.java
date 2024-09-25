@@ -23,7 +23,6 @@ public class GuestBookController {
                                                                 guestBookDTO.getFirstName(),
                                                                 guestBookDTO.getLastName(),
                                                                 guestBookDTO.getRelationship(),
-                                                                guestBookDTO.getEmailAddress(),
                                                                 guestBookDTO.getCity(),
                                                                 guestBookDTO.getState());
         guestBookRepository.save(newGuestBookEntry);

@@ -6,7 +6,7 @@ export default function GuestBookEditDisplay(props: any) {
     const allGuestBookEntries = props.guestBookEntries.map((guestBookEntry: any) => {
         return (
             <GuestBookCard
-            key={guestBookEntry.entry}
+            key={guestBookEntry.id}
             guestBookEntry={guestBookEntry}
             />
         )

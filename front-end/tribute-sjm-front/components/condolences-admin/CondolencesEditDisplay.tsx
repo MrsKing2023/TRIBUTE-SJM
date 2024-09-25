@@ -1,11 +1,11 @@
 import CondolenceEntryCard from "./CondolenceEntryCard"
 
 interface CondolenceEntry {
+    id: Number,
     entry: String,
     firstName: String,
     lastName: String,
     relationship: String,
-    emailAddress: String,
     city: String,
     state: String,
 }
@@ -25,7 +25,7 @@ export default function CondolencesEditDisplay(props: any) {
 const allEntries = props.condolenceEntries.map((condolenceEntry: CondolenceEntry) => {
     return (
         <CondolenceEntryCard
-        key={condolenceEntry.entry}
+        key={condolenceEntry.id}
         condolenceEntry={condolenceEntry}
         removeEntry={removeEntry}
         setCondolenceEntries={props.setCondolenceEntries}

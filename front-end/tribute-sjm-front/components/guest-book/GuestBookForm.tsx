@@ -1,7 +1,7 @@
 'use client'
 
 
-export default function GuestBookForm() {
+export default function GuestBookForm(props: any) {
 
 const webUrl: string = "http://localhost:8080"
 
@@ -13,7 +13,6 @@ const handleSubmit = async(event: any) => {
             firstName: String(event.target.firstName.value),
             lastName: String(event.target.lastName.value),
             relationship: String(event.target.relationship.value),
-            emailAddress: String(event.target.emailAddress.value),
             city: String(event.target.city.value),
             state: String(event.target.state.value),
         }
@@ -25,7 +24,7 @@ const handleSubmit = async(event: any) => {
             },
             body: JSON.stringify(guestBookEntry),
         }).then((response) => response.json()).then(guestBookEntry => {
-            console.log(guestBookEntry);
+            props.setGuestBookEntries(guestBookEntry);
         })
     }
 
@@ -49,7 +48,7 @@ const handleSubmit = async(event: any) => {
         </div>
 
         <div>
-            <textarea id="entry" name="entry" rows="5" cols="50" placeholder="Answer a question, share your own memory, or leave condolences"></textarea>
+            <textarea id="entry" name="entry" rows="6" cols="50" placeholder="Answer a question, share your own memory, or leave condolences"></textarea>
         </div>
 
         <div>
@@ -79,11 +78,6 @@ const handleSubmit = async(event: any) => {
             <option value="grandchild">Grandchild</option>
             <option value="son">Son</option>
             </select>
-        </div>
-
-        <div>
-            <h1>Email Address:</h1>
-            <input type="text" autoComplete="off" id="emailAddress" placeholder="Email Address" required minLength={3} maxLength={40} />
         </div>
                 
         <div>

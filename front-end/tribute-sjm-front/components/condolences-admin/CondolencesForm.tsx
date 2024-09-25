@@ -5,7 +5,6 @@ interface CondolenceEntry {
     firstName: String,
     lastName: String,
     relationship: String,
-    emailAddress: String,
     city: String,
     state: String,
 }
@@ -22,7 +21,6 @@ export default function CondolencesForm(props:any) {
             firstName: String(event.target.firstName.value),
             lastName: String(event.target.lastName.value),
             relationship: String(event.target.relationship.value),
-            emailAddress: String(event.target.emailAddress.value),
             city: String(event.target.city.value),
             state: String(event.target.state.value),
         }
@@ -40,7 +38,6 @@ export default function CondolencesForm(props:any) {
             event.target.firstName.value = ""
             event.target.lastName.value = ""
             event.target.relationship.value = ""
-            event.target.emailAddress.value = ""
             event.target.city.value = ""
             event.target.state.value = ""
         })            
@@ -82,11 +79,6 @@ export default function CondolencesForm(props:any) {
                     <option value="grandchild">Grandchild</option>
                     <option value="son">Son</option>
                     </select>
-                </div>
-
-                <div>
-                    <h1>Email Address:</h1>
-                    <input type="text" autoComplete="off" id="emailAddress" placeholder="Email Address" required minLength={3} maxLength={40} />
                 </div>
                 
                 <div>

@@ -5,11 +5,11 @@ import GuestBookForm from "@/components/guest-book/GuestBookForm";
 import { useState, useEffect} from 'react';
 
 interface GuestBookEntry {
+    id: Number,
     entry: String,
     firstName: String,
     lastName: String,
     relationship: String,
-    emailAddress: String,
     city: String,
     state: String,
 }
@@ -37,7 +37,9 @@ export default function GuestBook() {
         <div>
         <p>This is the Guestbook page</p>
         <div>
-            <GuestBookForm/>
+            <GuestBookForm
+            setGuestBookEntries={setGuestBookEntries}
+            />
         </div>
 
         <div>
