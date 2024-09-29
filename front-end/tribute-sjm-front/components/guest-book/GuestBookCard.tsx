@@ -1,7 +1,7 @@
 export default function GuestBookCard(props: any) {
 
     return(
-        <div>
+        <div >
             <p>Id: {props.guestBookEntry.id}</p>
             <p>Entry: {props.guestBookEntry.entry}</p>
             <p>First Name: {props.guestBookEntry.firstName}</p>

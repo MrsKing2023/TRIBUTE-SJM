@@ -25,6 +25,13 @@ const handleSubmit = async(event: any) => {
             body: JSON.stringify(guestBookEntry),
         }).then((response) => response.json()).then(guestBookEntry => {
             props.setGuestBookEntries(guestBookEntry);
+
+            event.target.entry.value = ""
+            event.target.firstName.value = ""
+            event.target.lastName.value = ""
+            event.target.relationship.value = ""
+            event.target.city.value = ""
+            event.target.state.value = ""
         })
     }
 
