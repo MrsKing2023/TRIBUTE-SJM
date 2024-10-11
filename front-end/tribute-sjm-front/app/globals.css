@@ -39,5 +39,28 @@ body {
     text-align: left;
   }
 
+  .card-container {
+    perspective: 1000px;
+  }
+  .card-body {
+    background: #fff;
+    position: relative;
+    width: auto;
+    max-width: 30rem;
+    height: auto;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+  }
+
+ .card-item {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #444;
+  max-width: 40rem;
+  margin-top: 0.5rem;
+ }
 
 }

@@ -38,8 +38,12 @@ const handleSubmit = async(event: any) => {
     return(
         <div className="flex justify-center">
 
+        <div className="card-container"> 
+        <div className="card-body"> 
+
         <form onSubmit={handleSubmit}>
-        <div>
+    
+        <div className="card-item"> 
             <h1>Guest Book </h1>
                 <ol>
                 <li>What is something you learned from Susan?</li>
@@ -54,21 +58,21 @@ const handleSubmit = async(event: any) => {
                 </ol>
         </div>
 
-        <div>
+        <div className="card-item">
             <textarea id="entry" name="entry" rows="6" cols="50" placeholder="Answer a question, share your own memory, or leave condolences"></textarea>
         </div>
 
-        <div>
+        <div className="card-item"> 
             <h1>First Name:</h1>  
             <input type="text" autoComplete="off" id="firstName" placeholder="First Name" required minLength={3} maxLength={40} />
         </div>
 
-       <div>
+       <div className="card-item">
             <h1>Last Name:</h1>
             <input type="text" autoComplete="off" id="lastName" placeholder="Last Name" required minLength={3} maxLength={40} />
         </div>
 
-        <div>
+        <div className="card-item">
             <h1>Choose A Relationship</h1>
             <select defaultValue="default" id="relationship" name="relationship">
             <option value="default">Choose A Relationship</option>
@@ -87,18 +91,19 @@ const handleSubmit = async(event: any) => {
             </select>
         </div>
                 
-        <div>
+        <div className="card-item">
             <h1>City:</h1>
             <input type="text" autoComplete="off" id="city" placeholder="City" required minLength={3} maxLength={40} />
         </div>
 
-        <div>
+        <div className="card-item">
             <h1>State:</h1>
             <input type="text" autoComplete="off" id="state" placeholder="State" required minLength={2} maxLength={40} />
         </div>
            <button className= "bg-green-500/80 p-2 rounded-md" type="submit">Submit</button>
         </form>
-        
+        </div>
+        </div>
         </div>
     )
 }
