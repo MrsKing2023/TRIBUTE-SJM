@@ -35,44 +35,31 @@ const handleSubmit = async(event: any) => {
         })
     }
 
-    return(
-        <div className="flex justify-center">
-
-        <div className="card-container"> 
-        <div className="card-body"> 
-
+    return (
+        <div>
         <form onSubmit={handleSubmit}>
-    
-        <div className="card-item"> 
             <h1>Guest Book </h1>
-                <ol>
-                <li>What is something you learned from Susan?</li>
-                <li>What is your first memory of Susan?</li>
-                <li>What is something you did together that you enjoyed?</li>
-                <li>What is something you will always remember about Susan?</li>
-                <li>Share a favorite memory you have of Susan.</li>
-                <li>Tell us about a special moment you shared with Susan.</li>
-                <li>Describe a place or activity that reminds you of Susan</li>
-                <li>Describe a time when Susan made you laugh or smile.</li>
-                <li>Talk about a shared experience you had with Susan.</li>
-                </ol>
-        </div>
-
-        <div className="card-item">
-            <textarea id="entry" name="entry" rows="6" cols="50" placeholder="Answer a question, share your own memory, or leave condolences"></textarea>
-        </div>
-
-        <div className="card-item"> 
+        <div> 
             <h1>First Name:</h1>  
             <input type="text" autoComplete="off" id="firstName" placeholder="First Name" required minLength={3} maxLength={40} />
         </div>
 
-       <div className="card-item">
+       <div>
             <h1>Last Name:</h1>
             <input type="text" autoComplete="off" id="lastName" placeholder="Last Name" required minLength={3} maxLength={40} />
         </div>
+                
+        <div>
+            <h1>City:</h1>
+            <input type="text" autoComplete="off" id="city" placeholder="City" required minLength={3} maxLength={40} />
+        </div>
 
-        <div className="card-item">
+        <div>
+            <h1>State:</h1>
+            <input type="text" autoComplete="off" id="state" placeholder="State" required minLength={2} maxLength={40} />
+        </div>
+
+        <div>
             <h1>Choose A Relationship</h1>
             <select defaultValue="default" id="relationship" name="relationship">
             <option value="default">Choose A Relationship</option>
@@ -90,20 +77,32 @@ const handleSubmit = async(event: any) => {
             <option value="son">Son</option>
             </select>
         </div>
-                
-        <div className="card-item">
-            <h1>City:</h1>
-            <input type="text" autoComplete="off" id="city" placeholder="City" required minLength={3} maxLength={40} />
+
+        <div>
+        <div className="container">
+            <textarea id="text" className="text-box" placeholder="Answer a question, share your own memory, or leave condolences"></textarea>                            
+           <div className="suggestedEntries">Not sure of what to say? </div>
+            <div className="slideshow">
+            <div className="slide">What is your first memory of Susan?</div>
+            <div className="slide">What is something you learned from Susan?</div>
+            <div className="slide">Talk about a shared experience you had with Susan.</div>
+            <div className="slide">Describe a time when Susan made you laugh or smile.</div>
+            <div className="slide">What is something you did together that you enjoyed?</div>
+            <div className="slide">Tell us about a special moment you shared with Susan.</div>
+            <div className="slide">Share a favorite memory you have of Susan.</div>
+            <div className="slide">What is something you will always remember about Susan?</div>
+            <div className="slide">Describe a place or activity that reminds you of Susan.</div>
+        </div>    
+        </div>
         </div>
 
-        <div className="card-item">
-            <h1>State:</h1>
-            <input type="text" autoComplete="off" id="state" placeholder="State" required minLength={2} maxLength={40} />
+        <div>
+
         </div>
            <button className= "bg-green-500/80 p-2 rounded-md" type="submit">Submit</button>
-        </form>
-        </div>
-        </div>
+        </form>        
+
         </div>
     )
+    
 }

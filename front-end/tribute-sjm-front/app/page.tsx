@@ -40,7 +40,7 @@ export default function Home() {
        </div>
 
         <div>
-          <GuestBook />
+          <p>Sign the <a href="http://localhost:3000/condolences/guest-book" target="_blank">Guest Book</a> for Susan Jones-Miree</p>
         </div>
        
 </div>

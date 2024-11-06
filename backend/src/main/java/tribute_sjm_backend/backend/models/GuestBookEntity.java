@@ -14,21 +14,23 @@ public class GuestBookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    public String entry;
     private String firstName;
     private String lastName;
-    private String relationship;
     private String city;
     private String state;
+    private String relationship;
+    public String entry;
 
 
-    public GuestBookEntity(String entry, String firstName, String lastName, String relationship, String city, String state) {
-        this.entry = entry;
+
+    public GuestBookEntity(String firstName, String lastName, String city, String state, String relationship, String entry) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.relationship = relationship;
         this.city = city;
         this.state = state;
+        this.relationship = relationship;
+        this.entry = entry;
+
     }
 
     public GuestBookEntity() {
@@ -36,14 +38,6 @@ public class GuestBookEntity {
 
     public Long getId() {
         return id;
-    }
-
-    public String getEntry() {
-        return entry;
-    }
-
-    public void setEntry(String entry) {
-        this.entry = entry;
     }
 
     public String getFirstName() {
@@ -62,14 +56,6 @@ public class GuestBookEntity {
         this.lastName = lastName;
     }
 
-    public String getRelationship() {
-        return relationship;
-    }
-
-    public void setRelationship(String relationship) {
-        this.relationship = relationship;
-    }
-
     public String getCity() {
         return city;
     }
@@ -84,5 +70,21 @@ public class GuestBookEntity {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(String relationship) {
+        this.relationship = relationship;
+    }
+
+    public String getEntry() {
+        return entry;
+    }
+
+    public void setEntry(String entry) {
+        this.entry = entry;
     }
 }

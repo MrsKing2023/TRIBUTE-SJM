@@ -19,12 +19,7 @@ public class GuestBookController {
 
     @PostMapping("/addGuestBookEntry")
     public ResponseEntity<?> addGuestBookEntry(@RequestBody GuestBookDTO guestBookDTO) {
-        GuestBookEntity newGuestBookEntry = new GuestBookEntity(guestBookDTO.getEntry(),
-                                                                guestBookDTO.getFirstName(),
-                                                                guestBookDTO.getLastName(),
-                                                                guestBookDTO.getRelationship(),
-                                                                guestBookDTO.getCity(),
-                                                                guestBookDTO.getState());
+        GuestBookEntity newGuestBookEntry = new GuestBookEntity(guestBookDTO.getFirstName(), guestBookDTO.getLastName(),  guestBookDTO.getCity(), guestBookDTO.getState(), guestBookDTO.getRelationship(), guestBookDTO.getEntry());
         guestBookRepository.save(newGuestBookEntry);
 
         return new ResponseEntity<>(guestBookRepository.findAll(), HttpStatus.OK);

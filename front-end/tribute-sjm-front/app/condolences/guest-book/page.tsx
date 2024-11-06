@@ -6,12 +6,13 @@ import { useState, useEffect} from 'react';
 
 interface GuestBookEntry {
     id: Number,
-    entry: String,
     firstName: String,
     lastName: String,
-    relationship: String,
     city: String,
     state: String,
+    relationship: String,
+    entry: String,
+
 }
 
 export default function GuestBook() {

@@ -1,12 +1,13 @@
 'use client'
 
 interface CondolenceEntry {
-    entry: String,
     firstName: String,
     lastName: String,
-    relationship: String,
     city: String,
     state: String,
+    relationship: String,
+    entry: String,
+
 }
 
 export default function CondolencesForm(props:any) {
@@ -17,12 +18,12 @@ export default function CondolencesForm(props:any) {
         event.preventDefault();
 
         const condolenceEntry = {
-            entry: String(event.target.entry.value),
             firstName: String(event.target.firstName.value),
             lastName: String(event.target.lastName.value),
-            relationship: String(event.target.relationship.value),
             city: String(event.target.city.value),
             state: String(event.target.state.value),
+            relationship: String(event.target.relationship.value),
+            entry: String(event.target.entry.value),
         }
         
         await fetch(webUrl + "/admin/addCondolence", {
@@ -34,24 +35,18 @@ export default function CondolencesForm(props:any) {
         }).then((response) => response.json()).then((condolenceEntry: CondolenceEntry[]) => {
             props.setCondolenceEntries(condolenceEntry);
 
-            event.target.entry.value = ""
             event.target.firstName.value = ""
             event.target.lastName.value = ""
-            event.target.relationship.value = ""
             event.target.city.value = ""
             event.target.state.value = ""
+            event.target.relationship.value = ""
+            event.target.entry.value = ""
         })            
     }
 
     return (
         <div className="flex justify-center">
             <form onSubmit={handleSubmit}>
-                <div>
-                    <h1>Create Entry:</h1>
-                    <textarea id="entry" name="entry" rows="5" cols="50" placeholder="What would you like to say about Susan?"></textarea>
-                </div>
-
-
                 <div>
                     <h1>First Name:</h1>
                     <input type="text" autoComplete="off" id="firstName" placeholder="First Name" required minLength={3} maxLength={40} />
@@ -60,6 +55,16 @@ export default function CondolencesForm(props:any) {
                 <div>
                     <h1>Last Name:</h1>
                     <input type="text" autoComplete="off" id="lastName" placeholder="Last Name" required minLength={3} maxLength={40} />
+                </div>
+                
+                <div>
+                    <h1>City:</h1>
+                    <input type="text" autoComplete="off" id="city" placeholder="City" required minLength={3} maxLength={40} />
+                </div>
+
+                <div>
+                    <h1>State:</h1>
+                    <input type="text" autoComplete="off" id="state" placeholder="State" required minLength={2} maxLength={40} />
                 </div>
 
                 <div>
@@ -80,16 +85,12 @@ export default function CondolencesForm(props:any) {
                     <option value="son">Son</option>
                     </select>
                 </div>
-                
-                <div>
-                    <h1>City:</h1>
-                    <input type="text" autoComplete="off" id="city" placeholder="City" required minLength={3} maxLength={40} />
-                </div>
 
                 <div>
-                    <h1>State:</h1>
-                    <input type="text" autoComplete="off" id="state" placeholder="State" required minLength={2} maxLength={40} />
+                    <h1>Create Entry:</h1>
+                    <textarea id="entry" name="entry" rows="5" cols="50" placeholder="What would you like to say about Susan?"></textarea>
                 </div>
+
                 <button className= "bg-green-500/80 p-2 rounded-md" type="submit">Submit</button>
 
             </form>

@@ -13,8 +13,8 @@ export default function GuestBookEditDisplay(props: any) {
     })
     
         return (
-            <div className="grid lg:grid-cols-5">
-            <p>Display All Guest Book Entries</p>
+            <div>
+            <p>Guest Book Entries</p>
             {allGuestBookEntries}
             </div>
     

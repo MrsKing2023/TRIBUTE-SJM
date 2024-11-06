@@ -4,24 +4,22 @@ package tribute_sjm_backend.backend.models.dto;
 
 public class CondolenceDTO {
 
-    public String entry;
     private String firstName;
     private String lastName;
-    private String relationship;
     private String city;
     private String state;
+    private String relationship;
+    public String entry;
 
-    public CondolenceDTO(String entry, String firstName, String lastName, String relationship, String city, String state) {
-        this.entry = entry;
+
+    public CondolenceDTO(String firstName, String lastName, String city, String state, String relationship, String entry) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.relationship = relationship;
         this.city = city;
         this.state = state;
-    }
+        this.relationship = relationship;
+        this.entry = entry;
 
-    public String getEntry() {
-        return entry;
     }
 
     public String getFirstName() {
@@ -32,9 +30,6 @@ public class CondolenceDTO {
         return lastName;
     }
 
-    public String getRelationship() {
-        return relationship;
-    }
 
     public String getCity() {
         return city;
@@ -42,5 +37,13 @@ public class CondolenceDTO {
 
     public String getState() {
         return state;
+    }
+
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public String getEntry() {
+        return entry;
     }
 }

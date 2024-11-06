@@ -22,7 +22,7 @@ public class CondolencesAdminController {
     @PostMapping("/addCondolence")
     public ResponseEntity<?> addCondolence(@RequestBody CondolenceDTO condolenceDTO) {
 
-        CondolenceEntity newCondolence = new CondolenceEntity(condolenceDTO.getEntry(), condolenceDTO.getFirstName(), condolenceDTO.getLastName(), condolenceDTO.getRelationship(), condolenceDTO.getCity(), condolenceDTO.getState());
+        CondolenceEntity newCondolence = new CondolenceEntity(condolenceDTO.getFirstName(), condolenceDTO.getLastName(), condolenceDTO.getCity(), condolenceDTO.getState(), condolenceDTO.getRelationship(), condolenceDTO.getEntry());
         condolenceRepository.save(newCondolence);
 
         return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
@@ -49,12 +49,12 @@ public class CondolencesAdminController {
         Optional<CondolenceEntity> updateCondolenceEntry = condolenceRepository.findById(id);
 
         if (updateCondolenceEntry.isPresent()) {
-            updateCondolenceEntry.get().setEntry(condolenceDTO.getEntry());
             updateCondolenceEntry.get().setFirstName(condolenceDTO.getFirstName());
             updateCondolenceEntry.get().setLastName(condolenceDTO.getLastName());
-            updateCondolenceEntry.get().setRelationship(condolenceDTO.getRelationship());
             updateCondolenceEntry.get().setCity(condolenceDTO.getCity());
             updateCondolenceEntry.get().setState(condolenceDTO.getState());
+            updateCondolenceEntry.get().setRelationship(condolenceDTO.getRelationship());
+            updateCondolenceEntry.get().setEntry(condolenceDTO.getEntry());
             condolenceRepository.save(updateCondolenceEntry.get());
         }
         return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
