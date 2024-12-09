@@ -35,8 +35,10 @@ const handleSubmit = async(event: any) => {
         })
     }
 
+    
+
     return (
-        <div>
+        <div className="guestformbox">
         <form onSubmit={handleSubmit}>
             <h1>Guest Book </h1>
         <div> 
@@ -79,22 +81,24 @@ const handleSubmit = async(event: any) => {
         </div>
 
         <div>
-        <div className="container">
+        <div className="slideshow-container">
             <textarea id="text" className="text-box" placeholder="Answer a question, share your own memory, or leave condolences"></textarea>                            
            <div className="suggestedEntries">Not sure of what to say? </div>
             <div className="slideshow">
-            <div className="slide">What is your first memory of Susan?</div>
-            <div className="slide">What is something you learned from Susan?</div>
-            <div className="slide">Talk about a shared experience you had with Susan.</div>
-            <div className="slide">Describe a time when Susan made you laugh or smile.</div>
-            <div className="slide">What is something you did together that you enjoyed?</div>
-            <div className="slide">Tell us about a special moment you shared with Susan.</div>
-            <div className="slide">Share a favorite memory you have of Susan.</div>
-            <div className="slide">What is something you will always remember about Susan?</div>
-            <div className="slide">Describe a place or activity that reminds you of Susan.</div>
+            <div className="mySlides">What is your first memory of Susan?</div>
+            <div className="mySlides">What is something you learned from Susan?</div>
+            <div className="mySlides">Talk about a shared experience you had with Susan.</div>
+            <div className="mySlides">Describe a time when Susan made you laugh or smile.</div>
+            <div className="mySlides">What is something you did together that you enjoyed?</div>
+            <div className="mySlides">Tell us about a special moment you shared with Susan.</div>
+            <div className="mySlides">Share a favorite memory you have of Susan.</div>
+            <div className="mySlides">What is something you will always remember about Susan?</div>
+            <div className="mySlides">Describe a place or activity that reminds you of Susan.</div>
         </div>    
         </div>
         </div>
+
+        
 
         <div>
 

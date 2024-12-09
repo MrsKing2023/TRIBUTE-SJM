@@ -54,6 +54,15 @@ body {
     border-radius: 15px;
     border: 10px groove;
     margin: auto;
+    background-color: lightgrey;
+}
+
+.guestformbox{
+  background-color: lightgrey;
+  width: 800px;
+  border: 15px solid grey;
+  padding: 50px;
+  margin: 20px;
 }
 
   .text-box {

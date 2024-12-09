@@ -45,6 +45,7 @@ export default function CondolencesForm(props:any) {
     }
 
     return (
+        
         <div className="flex justify-center">
             <form onSubmit={handleSubmit}>
                 <div>
@@ -90,6 +91,7 @@ export default function CondolencesForm(props:any) {
                     <h1>Create Entry:</h1>
                     <textarea id="entry" name="entry" rows="5" cols="50" placeholder="What would you like to say about Susan?"></textarea>
                 </div>
+                
 
                 <button className= "bg-green-500/80 p-2 rounded-md" type="submit">Submit</button>
 
