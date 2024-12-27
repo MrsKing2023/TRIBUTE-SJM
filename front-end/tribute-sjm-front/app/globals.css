@@ -41,49 +41,26 @@ body {
   margin: 15px 0 5px 0;
   }
 
-  blockquote {
-    font-style: italic;
-    max-width: 545px;
-    margin: 0 auto 50px auto;
-    text-align: left;
-  }
-
-  .container {
+  .guestbookform-container, .text-box {
     position: relative;
     text-align: center;
-    border-radius: 15px;
-    border: 10px groove;
+    border-radius: 10px;
+    border: 10px;
     margin: auto;
     background-color: lightgrey;
 }
 
-.guestformbox{
+.guestform {
   background-color: lightgrey;
-  width: 800px;
+  width: 700px;
   border: 15px solid grey;
   padding: 50px;
   margin: 20px;
 }
 
-  .text-box {
-    width: 620px;
-    height: 300px;;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    padding-bottom: 32px;
-    padding-left: 24px;
-    padding-right: 24px;
-    justify-content: center;
-    display: flex;    
-}
+.entry{
+  padding: 8px;
 
-.slide {
-  font-size: 14px;
-  padding: 8px 12px;
-  position: relative;
-  top: 0;
 }
 
   .card {
@@ -98,11 +75,101 @@ body {
     border: 10px groove;
   }
 
-  .card .content {
+  .card, .content {
     position: center;
     background: white;
     text-align: center;
   }
 
- 
+  /* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Add an italic font style to all quotes */
+p {
+  font-style: italic;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* Vertically center */
+  transform: translateY(-50%); /* Adjust to precisely center vertically */
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 100; /* Ensure it stays on top of the content */
+}
+
+.prev {
+  left: 10px; /* Adjust position to the left */
+}
+
+/* Position the "next button" to the right */
+.next{
+  position: absolute;
+  right: 10px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: white(0,0,0,0.8);
+  color: black;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container{
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.text-box {
+  width: 500px;
+  height: 100px;;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  padding-bottom: 32px;
+  padding-left: 24px;
+  padding-right: 24px;
+  justify-content: center;
+  display: flex; 
+  background-color: white;
+   
+}
+
 }
