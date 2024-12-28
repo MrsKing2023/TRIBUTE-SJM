@@ -1,18 +1,29 @@
-export default function GuestBookCard(props: any) {
+import { useState } from "react"
 
-    return(
-        <div className= "card" >
-            <div className= "content">
-            <div className= "">
-            <p>Id: {props.guestBookEntry.id}</p>
-            <p>First Name: {props.guestBookEntry.firstName}</p>
-            <p>Last Name: {props.guestBookEntry.lastName}</p>
-            <p>City: {props.guestBookEntry.city}</p>
-            <p>State: {props.guestBookEntry.state} </p>
-            <p>Relationship: {props.guestBookEntry.relationship}</p>
-            <p>Entry: {props.guestBookEntry.entry}</p>
-            </div>
-            </div>
+
+interface GuestBookEntry {
+    id: number;
+    firstName: string;
+    lastName: string;
+    city: string;
+    state: string;
+    relationship: string;
+    entry: string;
+  }
+    
+  export default function GuestBookCard(props: any) {
+    
+    return (
+      <div className="card">
+        <div className="content">
+          <p><strong>First Name:</strong> {props.guestBookEntry.firstName}</p>
+          <p><strong>Last Name:</strong> {props.guestBookEntry.lastName}</p>
+          <p><strong>City:</strong> {props.guestBookEntry.city}</p>
+          <p><strong>State:</strong> {props.guestBookEntry.state}</p>
+          <p><strong>Relationship:</strong> {props.guestBookEntry.relationship}</p>
+          <p><strong>Entry:</strong> {props.guestBookEntry.entry}</p>
         </div>
-    )
-}
+      </div>
+    );
+  }
+  
