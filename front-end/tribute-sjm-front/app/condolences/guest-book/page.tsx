@@ -36,7 +36,7 @@ export default function GuestBook() {
 
     return(
         <div>
-        <p>Memories and Condolences for Susan Jones Miree</p>
+        <p><strong>Memories and Condolences for Susan Jones Miree</strong></p>
         <div>
             <GuestBookForm
             setGuestBookEntries={setGuestBookEntries}

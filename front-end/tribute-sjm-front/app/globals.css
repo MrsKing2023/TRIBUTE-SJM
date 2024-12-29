@@ -13,7 +13,7 @@ body {
 }
 
 .h1 {
-  font-size: 4vw;
+  font-size: 20vw;
   font-style: italic;
 }
 
@@ -27,6 +27,7 @@ img {
   height: auto;
   margin: 0 auto;
   transition: all 0.3s ease;
+
 }
 
 img:hover {
@@ -44,6 +45,22 @@ img:hover {
   margin: 15px 0 5px 0;
 }
 
+figcaption {
+  font-size: 1vw;
+}
+
+.reddress{
+  padding: 10px;
+}
+
+.creamsweater {
+  padding: 10px;
+}
+
+.entries, .p{
+  text-align: left;
+}
+
 .guestbookform-container, .text-box {
   position: relative;
   text-align: center;
@@ -51,35 +68,47 @@ img:hover {
   border: 10px;
   margin: auto;
   background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+
 }
 
 .guestform {
   background-color: lightgrey;
   width: 700px;
   border: 15px solid grey;
-  padding: 50px;
+  padding: 40px;
   margin: 20px;
 }
 
+.guestform, .h1 {
+  padding: 40px;
+  margin: 10px;
+}
+
 .entry {
-  padding: 8px;
+  padding: 20px;
 }
 
 .card {
   position: relative;
-  height: 300px;
-  width: 800px;
+  height: 250px;
+  width: 650px;
   background: white;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   transition: 0.4s linear;
   border-radius: 15px;
   border: 10px groove;
+  padding: 20px;
 }
 
 .card, .content {
   background: white;
   text-align: center;
   font-style: italic;
+  
 }
 
 .text-box {

@@ -51,7 +51,7 @@ export default function GuestBookForm(props:any) {
     <div className="guestbookform-container">
       <div className="guestform">
         <form onSubmit={handleSubmit}>
-          <h1>Guest Book</h1>
+          <h1><strong><i>Please Sign Guest Book</i></strong></h1>
           <div>
                     <h1>First Name:</h1>
                     <input type="text" autoComplete="off" id="firstName" placeholder="First Name" required minLength={3} maxLength={40} />

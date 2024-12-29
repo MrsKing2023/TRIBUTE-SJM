@@ -25,8 +25,8 @@ export default function GuestBookEditDisplay(props: any) {
     });
 
   return (
-    <div>
-      <p>Guest Book Entries</p>
+    <div className="entries">
+      <p><strong>Guest Book Entries</strong></p>
       {allGuestBookEntries}
     </div>
   );
