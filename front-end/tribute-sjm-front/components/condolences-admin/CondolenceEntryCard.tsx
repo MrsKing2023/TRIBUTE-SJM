@@ -1,13 +1,13 @@
 import { useState } from "react"
 
 interface CondolenceEntry {
-    id: Number,
-    firstName: String,
-    lastName: String,
-    city: String,
-    state: String,
-    relationship: String,
-    entry: String,
+    id: number,
+    firstName: string,
+    lastName: string,
+    relationship: string,
+    city: string,
+    state: string,
+    entry: string,
 
 }
 
@@ -104,12 +104,12 @@ export default function CondolenceEntryCard(props: any) {
             :
             <div>
             <p>Id:{props.condolenceEntry.id}</p>
-            <p>First Name: {props.condolenceEntry.firstName}</p>
-            <p>Last Name: {props.condolenceEntry.lastName}</p>
-            <p>City: {props.condolenceEntry.city}</p>
-            <p>State: {props.condolenceEntry.state} </p>
-            <p>Relationship: {props.condolenceEntry.relationship}</p>
-            <p>Entry: {props.condolenceEntry.entry}</p>
+            <p>First Name:{props.condolenceEntry.firstName}</p>
+            <p>Last Name:{props.condolenceEntry.lastName}</p>
+            <p>City:{props.condolenceEntry.city}</p>
+            <p>State:{props.condolenceEntry.state} </p>
+            <p>Relationship:{props.condolenceEntry.relationship}</p>
+            <p>Entry:{props.condolenceEntry.entry}</p>
 
             <button onClick={() => props.removeEntry(props.condolenceEntry.id)}className="bg-red-500/80 mt-2 p-2 rounded-md">Delete</button>
             <button onClick={() => setEntry(prev => !prev)} className="bg-green-500/80 mt-2 p-2 rounded-md">Update Entry</button>

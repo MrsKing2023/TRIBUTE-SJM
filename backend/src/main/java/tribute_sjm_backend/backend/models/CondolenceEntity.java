@@ -1,15 +1,14 @@
 package tribute_sjm_backend.backend.models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.validation.Valid;
 
 @Entity
-public class CondolenceEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CondolenceEntity extends AbstractEntity{
+
     private String firstName;
     private String lastName;
     private String city;
@@ -17,6 +16,9 @@ public class CondolenceEntity {
     private String relationship;
     public String entry;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @Valid
+    private GuestBookEntity guestBookEntity;
 
     public CondolenceEntity(String firstName, String lastName, String city, String state, String relationship, String entry) {
         this.firstName = firstName;
@@ -29,10 +31,6 @@ public class CondolenceEntity {
 
     public CondolenceEntity () {
 
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getFirstName() {

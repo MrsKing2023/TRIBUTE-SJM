@@ -1,13 +1,13 @@
 import CondolenceEntryCard from "./CondolenceEntryCard"
 
 interface CondolenceEntry {
-    id: Number,
-    entry: String,
-    firstName: String,
-    lastName: String,
-    relationship: String,
-    city: String,
-    state: String,
+    id: number,
+    firstName: string,
+    lastName: string,
+    relationship: string,
+    city: string,
+    state: string,
+    entry: string,
 }
 
 export default function CondolencesEditDisplay(props: any) {

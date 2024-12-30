@@ -1,33 +1,44 @@
 import GuestBookCard from "./GuestBookCard";
 
 interface GuestBookEntry {
-  id: Number,
-  entry: String,
-  firstName: String,
-  lastName: String,
-  relationship: String,
-  city: String,
-  state: String,
+  id: number;
+  firstName: string;
+  lastName: string;
+  relationship: string;
+  city: string;
+  state: string;
+  entry: string;
 }
 
-export default function GuestBookEditDisplay(props: any) {
+interface GuestBookEditDisplayProps {
+  guestBookEntries: GuestBookEntry[];
+  setGuestBookEntries: (entries: GuestBookEntry[]) => void;
+}
 
-  const webUrl: string = "http://localhost:8080"
+export default function GuestBookEditDisplay(props: GuestBookEditDisplayProps) {
+  const webUrl: string = "http://localhost:8080";
 
-  const allGuestBookEntries = props.guestBookEntries.map((guestBookEntry: GuestBookEntry) => {
-      return (
-        <GuestBookCard
-          key={guestBookEntry.id} // Unique key
-          guestBookEntry={guestBookEntry}
-          setGuestBookEntries={props.setGuestBookEntries}
-        />
-      );
-    });
+  const allGuestBookEntries = Array.isArray(props.guestBookEntries)
+    ? props.guestBookEntries.map((guestBookEntry: GuestBookEntry) => {
+        return (
+          <GuestBookCard
+            key={guestBookEntry.id}
+            guestBookEntry={guestBookEntry}
+            setGuestBookEntries={props.setGuestBookEntries}
+          />
+        );
+      })
+    : [];
 
   return (
     <div className="entries">
       <p><strong>Guest Book Entries</strong></p>
-      {allGuestBookEntries}
+      {allGuestBookEntries.length > 0 ? (
+        allGuestBookEntries
+      ) : (
+        <p>No guest book entries available.</p>
+      )}
     </div>
   );
 }
+

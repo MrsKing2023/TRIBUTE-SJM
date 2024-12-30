@@ -2,13 +2,14 @@ import { useState } from "react"
 
 
 interface GuestBookEntry {
-    id: number;
-    firstName: string;
-    lastName: string;
-    city: string;
-    state: string;
-    relationship: string;
-    entry: string;
+  id: number,
+  firstName: string,
+  lastName: string,
+  relationship: string,
+  city: string,
+  state: string,
+  entry: string,
+
   }
     
   export default function GuestBookCard(props: any) {
@@ -16,6 +17,7 @@ interface GuestBookEntry {
     return (
       <div className="card">
         <div className="content">
+        <p><strong>Id:</strong> {props.guestBookEntry.id}</p>
           <p><strong>First Name:</strong> {props.guestBookEntry.firstName}</p>
           <p><strong>Last Name:</strong> {props.guestBookEntry.lastName}</p>
           <p><strong>City:</strong> {props.guestBookEntry.city}</p>

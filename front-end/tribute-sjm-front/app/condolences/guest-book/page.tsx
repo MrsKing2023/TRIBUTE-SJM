@@ -5,13 +5,13 @@ import GuestBookForm from "@/components/guest-book/GuestBookForm";
 import { useState, useEffect} from 'react';
 
 interface GuestBookEntry {
-    id: Number,
-    firstName: String,
-    lastName: String,
-    city: String,
-    state: String,
-    relationship: String,
-    entry: String,
+    id: number,
+    firstName: string,
+    lastName: string,
+    relationship: string,
+    city: string,
+    state: string,
+    entry: string,
 
 }
 
@@ -30,7 +30,7 @@ export default function GuestBook() {
     
         }) 
       }
-      getGuestBookEntries();
+getGuestBookEntries();
     }, [])
     
 

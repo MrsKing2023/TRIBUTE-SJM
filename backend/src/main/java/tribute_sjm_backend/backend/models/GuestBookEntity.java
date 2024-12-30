@@ -4,22 +4,20 @@ package tribute_sjm_backend.backend.models;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 
-import java.util.Date;
-
 @Entity
-public class GuestBookEntity {
+public class GuestBookEntity extends AbstractEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String firstName;
     private String lastName;
     private String city;
     private String state;
     private String relationship;
+    //@Column(length = 3000, columnDefinition = "MEDIUMBLOB NOT NULL")
     public String entry;
 
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @Valid
+    private CondolenceEntity condolenceEntity; //relate GuestBookEntity class to CondolenceEntity class
 
     public GuestBookEntity(String firstName, String lastName, String city, String state, String relationship, String entry) {
         this.firstName = firstName;
@@ -28,14 +26,9 @@ public class GuestBookEntity {
         this.state = state;
         this.relationship = relationship;
         this.entry = entry;
-
     }
 
     public GuestBookEntity() {
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getFirstName() {
@@ -84,5 +77,13 @@ public class GuestBookEntity {
 
     public void setEntry(String entry) {
         this.entry = entry;
+    }
+
+    public CondolenceEntity getCondolenceEntity() {
+        return condolenceEntity;
+    }
+
+    public void setCondolenceEntity(CondolenceEntity condolenceEntity) {
+        this.condolenceEntity = condolenceEntity;
     }
 }

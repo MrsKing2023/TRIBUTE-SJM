@@ -3,13 +3,13 @@
 import { useState } from 'react';
 
 interface GuestBookEntry {
-  firstName: String,
-  lastName: String,
-  city: String,
-  state: String,
-  relationship: String,
-  entry: String,
-
+  id: number,
+  firstName: string,
+  lastName: string,
+  relationship: string,
+  city: string,
+  state: string,
+  entry: string,
 }
 
 export default function GuestBookForm(props:any) {
