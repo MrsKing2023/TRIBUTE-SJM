@@ -45,7 +45,9 @@ getGuestBookEntries();
 
         <div>
             <GuestBookEditDisplay 
-            guestBookEntries={guestBookEntries}/>
+            guestBookEntries={guestBookEntries}
+            setGuestBookEntries={setGuestBookEntries}
+            />
         </div>
 
         </div>

@@ -33,6 +33,7 @@ public class CondolencesAdminController {
         return new ResponseEntity<>(condolenceRepository.findAll(), HttpStatus.OK);
     }
 
+
     @DeleteMapping("/removeCondolence/{id}")
     public ResponseEntity<?> removeCondolenceEntry(@PathVariable Long id) {
         Optional<CondolenceEntity> removeCondolence = condolenceRepository.findById(id);

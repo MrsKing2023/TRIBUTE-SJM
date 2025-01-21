@@ -39,7 +39,7 @@ export default function CondolencesAdmin() {
         <div>
         <p>This is the Admin page. Admin has full CRUD functionality</p>
         
-        <div > 
+        <div> 
         <CondolencesForm 
         setCondolenceEntries={setCondolenceEntries}
         />
@@ -50,7 +50,7 @@ export default function CondolencesAdmin() {
             condolenceEntries={condolenceEntries}
             setCondolenceEntries={setCondolenceEntries}
             />
-        </div>
+        </div> 
         </div>
     )
 }

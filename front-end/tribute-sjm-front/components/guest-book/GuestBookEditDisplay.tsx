@@ -16,7 +16,16 @@ interface GuestBookEditDisplayProps {
 }
 
 export default function GuestBookEditDisplay(props: GuestBookEditDisplayProps) {
+
   const webUrl: string = "http://localhost:8080";
+
+  const removeEntry = (guestBookEntryId: number) => {
+      fetch(webUrl + "/guestBook/removeGuestBookEntry/" + guestBookEntryId, {
+          method: "DELETE" 
+      }).then((response) => response.json()).then((guestBookEntry: GuestBookEntry[]) => {
+          props.setGuestBookEntries(guestBookEntry);
+      })
+  }
 
   const allGuestBookEntries = Array.isArray(props.guestBookEntries)
     ? props.guestBookEntries.map((guestBookEntry: GuestBookEntry) => {
@@ -25,6 +34,7 @@ export default function GuestBookEditDisplay(props: GuestBookEditDisplayProps) {
             key={guestBookEntry.id}
             guestBookEntry={guestBookEntry}
             setGuestBookEntries={props.setGuestBookEntries}
+            removeEntry = {removeEntry}
           />
         );
       })
@@ -36,7 +46,7 @@ export default function GuestBookEditDisplay(props: GuestBookEditDisplayProps) {
       {allGuestBookEntries.length > 0 ? (
         allGuestBookEntries
       ) : (
-        <p>No guest book entries available.</p>
+        <p>Guest Book Entries</p>
       )}
     </div>
   );

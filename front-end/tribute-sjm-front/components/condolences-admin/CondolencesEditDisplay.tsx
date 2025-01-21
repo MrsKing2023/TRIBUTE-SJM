@@ -30,6 +30,8 @@ const allEntries = props.condolenceEntries.map((condolenceEntry: CondolenceEntry
         removeEntry={removeEntry}
         setCondolenceEntries={props.setCondolenceEntries}
         />
+
+        
     )
 })
 

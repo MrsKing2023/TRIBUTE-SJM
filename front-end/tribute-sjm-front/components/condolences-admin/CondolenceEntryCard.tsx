@@ -93,7 +93,7 @@ export default function CondolenceEntryCard(props: any) {
 
                 <div>
                     <h1>Entry:</h1>
-                    <textarea id="entry" name="entry" rows="5" cols="50" defaultValue={props.condolenceEntry.entry} placeholder="What would you like to say about Susan?"></textarea>
+                    <textarea id="entry" name="entry" row="5" col="50" defaultValue={props.condolenceEntry.entry} placeholder="What would you like to say about Susan?"></textarea>
                 </div>
                 <button className= "bg-green-500/80 p-2 rounded-md" type="submit">Submit</button>
                 <button className= "bg-red-500/80 p-2 rounded-md" onClick={() => setEntry(prev => !prev)}>Cancel</button>
