@@ -96,7 +96,7 @@ export default function GuestBookForm(props:any) {
                     <textarea id="entry" name="entry" rows="5" cols="50" placeholder="What would you like to say about Susan?"></textarea>
                 </div>
 
-          <button className="bg-green-500/80 p-2 rounded-md" type="submit">Submit</button>
+          <button className="bg-blue-500/80 p-2 rounded-md" type="submit">Submit</button>
         </form>
       </div>
     </div>
