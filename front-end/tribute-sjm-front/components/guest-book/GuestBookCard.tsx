@@ -51,7 +51,6 @@ interface GuestBookEntry {
         {entry ?
         
         <form onSubmit={handleSubmit}>
-          <h1><strong><i>Please Sign Guest Book</i></strong></h1>
           <div>
                     <h1>First Name:</h1>
                     <input type="text" autoComplete="off" id="firstName" defaultValue={props.guestBookEntry.firstName} required minLength={3} maxLength={40} />
@@ -95,22 +94,22 @@ interface GuestBookEntry {
                     <h1>Entry:</h1>
                     <textarea id="entry" name="entry" rows="5" cols="50" defaultValue={props.guestBookEntry.entry}></textarea>
                 </div>
-                <button className="bg-gray-500/80 p-2 rounded-md" type="submit">Submit</button>
-                <button className= "bg-gray-500/80 p-2 rounded-md" onClick={() => setEntry(prev => !prev)}>Cancel</button>
+                <button className="button" type="submit">Submit</button>
+                <button className= "button" onClick={() => setEntry(prev => !prev)}>Cancel</button>
                 </form>
                 
                 :
 
         <div className="content">
-        <p><strong>Id:</strong> {props.guestBookEntry.id}</p>
-          <p><strong>First Name:</strong> {props.guestBookEntry.firstName}</p>
-          <p><strong>Last Name:</strong> {props.guestBookEntry.lastName}</p>
-          <p><strong>City:</strong> {props.guestBookEntry.city}</p>
-          <p><strong>State:</strong> {props.guestBookEntry.state}</p>
-          <p><strong>Relationship:</strong> {props.guestBookEntry.relationship}</p>
-          <p><strong>Entry:</strong> {props.guestBookEntry.entry}</p>
-          <button onClick={() => props.removeEntry(props.guestBookEntry.id)}className="bg-gray-500/80 mt-2 p-2 rounded-md">Delete</button>
-          <button className= "bg-gray-500/80 p-2 rounded-md" onClick={() => setEntry(prev => !prev)}>Update Entry</button>
+            <p><strong>ID:</strong> {props.guestBookEntry.id}</p>
+            <p><strong>First Name:</strong> {props.guestBookEntry.firstName}</p>
+            <p><strong>Last Name:</strong> {props.guestBookEntry.lastName}</p>
+            <p><strong>City:</strong> {props.guestBookEntry.city}</p>
+            <p><strong>State:</strong> {props.guestBookEntry.state}</p>
+            <p><strong>Relationship:</strong> {props.guestBookEntry.relationship}</p>
+            <p><strong>Entry:</strong> {props.guestBookEntry.entry}</p>
+            <button onClick={() => props.removeEntry(props.guestBookEntry.id)}className="button">Delete</button>
+            <button className= "button" onClick={() => setEntry(prev => !prev)}>Update Entry</button>
        </div>
         }
         </div>

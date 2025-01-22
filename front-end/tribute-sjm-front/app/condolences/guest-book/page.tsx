@@ -36,7 +36,7 @@ getGuestBookEntries();
 
     return(
         <div>
-        <p><strong>Memories and Condolences for Susan Jones Miree</strong></p>
+        <p><strong>Memories and Condolences for Susan Jones-Miree</strong></p>
         <div>
             <GuestBookForm
             setGuestBookEntries={setGuestBookEntries}

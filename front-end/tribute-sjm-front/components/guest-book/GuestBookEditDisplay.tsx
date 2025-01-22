@@ -44,9 +44,9 @@ export default function GuestBookEditDisplay(props: GuestBookEditDisplayProps) {
     <div className="entries">
       <p><strong>Guest Book Entries</strong></p>
       {allGuestBookEntries.length > 0 ? (
-        allGuestBookEntries
+       allGuestBookEntries
       ) : (
-        <p>Guest Book Entries</p>
+       <p><strong>Guest Book Entries</strong></p>
       )}
     </div>
   );
