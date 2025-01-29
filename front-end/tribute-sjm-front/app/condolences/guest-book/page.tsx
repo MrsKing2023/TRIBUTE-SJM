@@ -35,7 +35,7 @@ getGuestBookEntries();
     
 
     return(
-        <div>
+        <div className="memories">
         <p><strong>Memories and Condolences for Susan Jones-Miree</strong></p>
         <div>
             <GuestBookForm
@@ -43,7 +43,10 @@ getGuestBookEntries();
             />
         </div>
 
-        <div>
+        <div className="entries">
+        <div> 
+      <p><strong>Guest Book Entries</strong></p>
+      </div>
             <GuestBookEditDisplay 
             guestBookEntries={guestBookEntries}
             setGuestBookEntries={setGuestBookEntries}
